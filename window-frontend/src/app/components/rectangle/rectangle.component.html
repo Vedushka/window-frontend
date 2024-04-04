@@ -1,0 +1,29 @@
+<!-- <svg class="svg">
+    <g>
+      <rect [attr.x]="left" [attr.y]="top"  [attr.width]="width" [attr.height]="height" fill="#64bc50" (mousedown)="mouseDown($event)" (mousemove)="mouseMove($event)" (mouseup)="mouseUp($event)" />
+    <text [attr.x]="left + width + 10" [attr.y]="top + height / 2 + 10">Perimeter: {{width + width + height + height}}</text>
+    </g>
+</svg> -->
+<!-- [attr.x]="left" [attr.y]="top"  [attr.width]="width" [attr.height]="height" -->
+<svg class="svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_13_2)">
+    <mask id="path-1-inside-1_13_2" fill="white" >
+    <rect [attr.x]="left" [attr.y]="top"  [attr.width]="width" [attr.height]="height" rx="3"/>
+    </mask>
+    <rect [attr.x]="left + 5" [attr.y]="top + 5"  [attr.width]="width - 10" [attr.height]="height - 10" fill="#A6CAE4" fill-opacity="0.2"  (mousedown)="mouseDown($event)" (mousemove)="mouseMove($event)" (mouseup)="mouseUp($event)"/>
+    <rect [attr.x]="left + width/3" [attr.y]="top + 5" width="5" [attr.height]="height" fill="white"/>
+    <rect [attr.x]="left + width/3*2" [attr.y]="top + 5" width="5" [attr.height]="height" fill="white"/>
+    <rect [attr.x]="left + 5" [attr.y]="top + height/3"  [attr.width]="width" height="5" fill="white"/>
+    <rect [attr.x]="left + 5" [attr.y]="top + height/3*2" [attr.width]="width" height="5" fill="white"/>
+    </g>
+    <rect [attr.x]="left" [attr.y]="top"  [attr.width]="width" [attr.height]="height" rx="3" stroke="white" stroke-width="22" stroke-linejoin="round" mask="url(#path-1-inside-1_13_2)"/>
+    <defs>
+    <clipPath id="clip0_13_2">
+    <rect [attr.x]="left" [attr.y]="top"  [attr.width]="width" [attr.height]="height" rx="3" fill="white" />
+    </clipPath>
+    </defs>
+    @if( width + height > 0){
+        <text [attr.x]="left + width + 10" [attr.y]="top + height / 2 + 10" fill="#000000">Perimeter: {{width + width + height + height | number: '1.0-0'}}</text>
+    }
+</svg>
+    
